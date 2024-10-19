@@ -4,21 +4,21 @@
 ## 安装步骤
 1 首先下载[Clash.for.Windows-0.20.39-x64-linux.tar.gz](https://github.com/CHH3213/clash-for-windows-backup/releases/tag/v0.20.39),下载完成后终端进入下载目录双击压缩包提取到当前目录下，或者运行以下命令解压：
 
-tar zxvf Clash.for.Windows-0.20.39-x64-linux.tar.gz
+**tar zxvf Clash.for.Windows-0.20.39-x64-linux.tar.gz**
 
 2 解压完成后，进入/opt/目录并创建clash-GUI文件夹:
 
-cd /opt
-mkdir clash-GUI
+**cd /opt**
+**mkdir clash-GUI**
 
 3 终端回到下载目录运行以下命令将文件夹移动到/opt/clash-GUI:
 
-mv Clash\ for\ Windows-0.20.39-x64-linux /opt/clash-GUI
+**mv Clash\ for\ Windows-0.20.39-x64-linux /opt/clash-GUI**
 
 4 进入Clash\ for\ Windows-0.20.39-x64-linux目录，fw就是 clash for windows的意思，原作者把gui界面也移植到了linux中，我们可以运行以下命令打开:
 
-cd Clash\ for\ Windows-0.20.39-x64-linux
-./cfw
+**cd Clash\ for\ Windows-0.20.39-x64-linux**
+**./cfw**
 
 打开以后就能看到：
 
@@ -63,15 +63,15 @@ cd Clash\ for\ Windows-0.20.39-x64-linux
 
 1 更新软件源:
 
-sudo apt update
+**sudo apt update**
 
 2 安装支持包:
 
-sudo apt-get install i965-va-driver libva-intel-vaapi-driver vainfo
+**sudo apt-get install i965-va-driver libva-intel-vaapi-driver vainfo**
 
 2 运行命令查看开启的接口信息:
 
-lspci |grep VGA
+**lspci |grep VGA**
 00:02.0 VGA compatible controller: Intel Corporation Device 3e92
 01:00.0 VGA compatible controller: NVIDIA Corporation Device 1b83 (rev a1)
 
@@ -79,41 +79,36 @@ lspci |grep VGA
 
 3 vainfo支持调用nvidia显卡，但需要先安装驱动:
 
-sudo apt install vdpau-va-driver
+**sudo apt install vdpau-va-driver**
 
 4 vainfo查看调用情况:
 
-vainfo
+**vainfo**
 
 5 libva环境变量:
 
-set | grep LIBVA
+**set | grep LIBVA**
 
 应输出:
 LIBVA_DRIVER_NAME=i965 #iHD #i965 #nvidia
 LIBVA_DRIVERS_PATH=/usr/lib/x86_64-linux-gnu/dri
 如果没有请根据库路径将这些添加到系统环境变量:
 
-gedit ~/.bashrc
+**gedit ~/.bashrc**
 
 在~/.bashrc文件中添加下面两行:
 
-export LIBVA_DRIVER_NAME=i965 #iHD #i965 #nvidia
-export LIBVA_DRIVERS_PATH=/usr/lib/x86_64-linux-gnu/dri
+**export LIBVA_DRIVER_NAME=i965 #iHD #i965 #nvidia**
+**export LIBVA_DRIVERS_PATH=/usr/lib/x86_64-linux-gnu/dri**
 
 保存退出并重启终端
 
 6 重新回到/opt/clash-GUI/Clash\ for\ Windows-0.20.39-x64-linux目录下运行gui：
 
-./cfw
+**./cfw**
 
 #### END终端运行命令遇到权限不够的错误，只需在命令前加 sudo 即可
 #### 遇到error要学会读报错内容
-
-
-参考链接:
-[https://chh3213.github.io/2023/11/12/linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEclash-gui%E7%95%8C%E9%9D%A2/](https://chh3213.github.io/2023/11/12/linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEclash-gui%E7%95%8C%E9%9D%A2/)
-[https://blog.csdn.net/Tosonw/article/details/90412626](https://blog.csdn.net/Tosonw/article/details/90412626)
 
 
 ##### 此教程仅供内部学习交流使用，任何非法用途均与本项目作者无关
