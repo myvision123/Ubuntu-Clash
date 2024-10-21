@@ -9,6 +9,7 @@
 2 解压完成后，进入/opt/目录并创建clash-GUI文件夹:
 
 **cd /opt**
+
 **mkdir clash-GUI**
 
 3 终端回到下载目录运行以下命令将文件夹移动到/opt/clash-GUI:
@@ -18,6 +19,7 @@
 4 进入Clash\ for\ Windows-0.20.39-x64-linux目录，fw就是 clash for windows的意思，原作者把gui界面也移植到了linux中，我们可以运行以下命令打开:
 
 **cd Clash\ for\ Windows-0.20.39-x64-linux**
+
 **./cfw**
 
 打开以后就能看到：
